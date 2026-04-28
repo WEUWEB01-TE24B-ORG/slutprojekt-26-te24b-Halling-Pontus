@@ -1,0 +1,81 @@
+/* Enkel CSS-reset */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 100%;
+}
+:root {
+    --icy-blue: #b9e6ffff;
+    --toffee-brown: #8a6552ff;
+    --vanilla-custard: #f6e3a2ff;
+    --espresso: #462521ff;
+    --emerald: #2fbf71ff;
+}
+body{
+    background-color: var(--toffee-brown);
+}
+.container{
+    display: grid;
+    gap: 2em;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+    "Sidhuvud Sidhuvud"
+    "Innehåll Sidpanel"
+    "Sidfot Sidfot"
+    ;
+}
+header{
+    background-color: var(--espresso);
+    grid-area: Sidhuvud;
+}
+header h1{
+    font-size: 5em;
+}
+header nav{
+    margin-left: 2.5rem;
+}
+header nav a{
+    text-decoration: none;
+}
+main{
+    grid-area: Innehåll;
+    background-color: wheat;
+}
+main h2{
+    font-size: 3em;
+}
+main img{
+    width: 50%;
+}
+main p{
+    
+}
+aside{
+    grid-area: Sidpanel;
+}
+aside h2{
+
+}
+footer{
+    grid-area: Sidfot;
+}
