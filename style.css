@@ -83,10 +83,23 @@ main article h2{
     margin-bottom: 1rem;
 }
 main article p{
-
+    
+}
+main h2{
+    text-align: center;
+}
+main .columns{
+    display: flex;
+    text-align: center;
+}
+main figure{
+    margin: auto;
+    background-color: wheat;
+    padding: 1rem;
+    border-radius: 1rem;
 }
 main figure img{
-    width: 50%;
+    width: 15rem;
 }
 main figure figcaption{
     
