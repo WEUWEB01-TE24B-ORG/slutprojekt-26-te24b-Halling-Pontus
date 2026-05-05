@@ -89,21 +89,26 @@ main article p{
     
 }
 main h1{
+    padding: 1rem 0 1rem 0;
+    margin-left: 2.5rem;
+    background-color: wheat;
     text-align: center;
     margin-bottom: 1rem;
 }
 main .columns{
     display: flex;
+    justify-content: space-between;
     text-align: center;
-    gap: 5rem;
 }
 main figure{
+    border: 2px solid black;
     background-color: wheat;
     padding: 1rem;
     border-radius: 1rem;
+    width: 40%
 }
 main figure img{
-    width: 15rem;
+    width: 20rem;
     margin-bottom: 1rem; 
 }
 main figure p{
@@ -122,7 +127,6 @@ nav.leftSidePanel{
     margin-left: 5rem;
 }
 nav ul{
-
 }
 nav ul li{
     margin-left: 1rem;
@@ -136,7 +140,6 @@ nav ul li a:visited{
 aside{
     grid-area: rightSidePanel;
 }
-
 footer{
     grid-area: footer;
     background-color: var(--espresso);
