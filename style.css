@@ -30,6 +30,9 @@ img{
     --espresso: #462521ff;
     --emerald: #2fbf71ff;
 }
+html {
+  scroll-padding-top: 4rem;
+}
 body{
     background-color: var(--toffee-brown);
 }
@@ -85,24 +88,30 @@ main article h2{
 main article p{
     
 }
-main h2{
+main h1{
     text-align: center;
+    margin-bottom: 1rem;
 }
 main .columns{
     display: flex;
     text-align: center;
+    gap: 5rem;
 }
 main figure{
-    margin: auto;
     background-color: wheat;
     padding: 1rem;
     border-radius: 1rem;
 }
 main figure img{
     width: 15rem;
+    margin-bottom: 1rem; 
 }
-main figure figcaption{
-    
+main figure p{
+    font-family: "Merriweather", serif;
+}
+main figure p a{
+    text-decoration: none;
+    color: black;
 }
 main p{
     
@@ -118,6 +127,12 @@ nav ul{
 nav ul li{
     margin-left: 1rem;
 }   
+nav ul li a:link{
+    color: var(--emerald);
+}
+nav ul li a:visited{
+    color: var(--icy-blue);
+}
 aside{
     grid-area: rightSidePanel;
 }
