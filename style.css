@@ -31,39 +31,63 @@ img{
     --emerald: #2fbf71ff;
 }
 html {
-  scroll-padding-top: 4rem;
+    scroll-padding-top: 4rem;
 }
 body{
     background-color: var(--toffee-brown);
 }
 .container{
     display: grid;
-    gap: 2rem;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas: 
-    "header header header"
-    "leftSidePanel content rightSidePanel"
-    "footer footer footer"
-    ;
+    "header"
+    "leftSidePanel"
+    "content" /*rightSidePanel behövs inte på mobil */
+    "footer";
+}
+@media (min-width: 768px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas: 
+        "header header header"
+        "leftSidePanel content rightSidePanel"
+        "footer footer footer";
+    }
+    main .columns{
+        flex-wrap: nowrap;
+    }
+}
+@media (min-width: 1024px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-areas:
+        "header header header"
+        "leftSidePanel content rightSidePanel"
+        "footer footer footer";
+    }
+    main .columns{
+        flex-wrap: nowrap;
+    }
 }
 header{
     background-color: var(--espresso);
     grid-area: header;
     position: sticky;
     top: 0;
-}
-header h1{
-    font-size: 5em;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 header nav{
     margin-left: 2rem;
-    margin-bottom: 1rem;
-    padding-top: 1rem;
 }
 header nav a{
     text-decoration: none; 
     font-family: "Merriweather", serif;
     margin-left: 1.67rem;
+    margin-top: -1rem;
     font-size: 1.4rem;
     color: whitesmoke
 }
@@ -89,37 +113,40 @@ main article p{
     
 }
 main h1{
-    padding: 1rem 0 1rem 0;
-    margin-left: 2.5rem;
+    padding: 1rem 0 1rem 0;;
     background-color: wheat;
     text-align: center;
     margin-bottom: 1rem;
+    margin-left: 5.25%;
+    width: 90%;
+    border-radius: 1rem;
+    border: 0.2rem black solid;
 }
 main .columns{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    text-align: center;
 }
-main figure{
-    border: 2px solid black;
+main .columns figure{
+    border: 0.2rem solid black;
     background-color: wheat;
     padding: 1rem;
     border-radius: 1rem;
-    width: 40%
+    text-align: center;
+    flex: 1;
 }
-main figure img{
-    width: 20rem;
-    margin-bottom: 1rem; 
+main .columns figure img{
+    margin-bottom: 1rem;
 }
-main figure p{
+main .columns figure p{
     font-family: "Merriweather", serif;
 }
-main figure p a{
+main .columns figure p a{
     text-decoration: none;
     color: black;
 }
 main p{
-    
+    width: 100%;
 }
 nav.leftSidePanel{
     margin-top: 2.5rem;
