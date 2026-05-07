@@ -113,22 +113,24 @@ main article p{
     
 }
 main h1{
-    padding: 1rem 0 1rem 0;;
-    background-color: wheat;
     text-align: center;
     margin-bottom: 1rem;
-    margin-left: 5.25%;
-    width: 90%;
-    border-radius: 1rem;
-    border: 0.2rem black solid;
 }
+
 main .columns{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+.suportPage{
+   background-color: wheat; 
+   padding: 2rem;
+   border-radius: 1rem;
+   margin-bottom: 2rem;
 }
 main .columns figure{
     border: 0.2rem solid black;
-    background-color: wheat;
+    background-color: var(--vanilla-custard);
     padding: 1rem;
     border-radius: 1rem;
     text-align: center;
@@ -136,7 +138,7 @@ main .columns figure{
     min-width: 35%;
 }
 main .columns figure img{
-    width: 50%;
+    width: 55%;
     margin-bottom: 1rem;
 }
 main .columns figure p{
@@ -146,26 +148,52 @@ main .columns figure p a{
     text-decoration: none;
     color: black;
 }
+.post{
+    padding: 1rem;
+    margin-bottom: 3.5rem;
+    border-radius: 0.5rem;
+}
+.suportForm{
+    padding: 1rem;
+    margin-bottom: 3.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--vanilla-custard);
+    border: 0.2rem solid black;
+}
+form label{
+
+}
+form input{
+    width: 15rem;
+}
+form textarea{
+    max-width: 101%;
+    min-width: 100%;
+    height: 8rem;
+}
 main p{
     width: 100%;
     width: auto;    
     word-break: break-word
 }
+
 nav.leftSidePanel{
     margin-top: 2.5rem;
     grid-area: leftSidePanel;
     margin-left: 5rem;
 }
 nav ul{
-
+    margin-bottom: 1rem;
 }
 nav ul li{
     margin-left: 1rem;
 }   
 nav ul li a:link{
     color: var(--emerald);
+    text-decoration: none;
 }
 nav ul li a:visited{
+    text-decoration: none;
     color: var(--icy-blue);
 }
 aside{
