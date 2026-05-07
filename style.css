@@ -48,14 +48,14 @@ body{
 @media (min-width: 768px){
     .container{
         display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1fr 4fr 1fr;
         grid-template-areas: 
         "header header header"
         "leftSidePanel content rightSidePanel"
         "footer footer footer";
     }
     main .columns{
-        flex-wrap: nowrap;
+        overflow: hidden;
     }
 }
 @media (min-width: 1024px) {
@@ -68,7 +68,7 @@ body{
         "footer footer footer";
     }
     main .columns{
-        flex-wrap: nowrap;
+        overflow: hidden;
     }
 }
 header{
@@ -125,7 +125,6 @@ main h1{
 main .columns{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 main .columns figure{
     border: 0.2rem solid black;
@@ -133,9 +132,11 @@ main .columns figure{
     padding: 1rem;
     border-radius: 1rem;
     text-align: center;
-    flex: 1;
+    flex: 1 1 0;
+    min-width: 35%;
 }
 main .columns figure img{
+    width: 50%;
     margin-bottom: 1rem;
 }
 main .columns figure p{
@@ -147,6 +148,8 @@ main .columns figure p a{
 }
 main p{
     width: 100%;
+    width: auto;    
+    word-break: break-word
 }
 nav.leftSidePanel{
     margin-top: 2.5rem;
@@ -154,6 +157,7 @@ nav.leftSidePanel{
     margin-left: 5rem;
 }
 nav ul{
+
 }
 nav ul li{
     margin-left: 1rem;

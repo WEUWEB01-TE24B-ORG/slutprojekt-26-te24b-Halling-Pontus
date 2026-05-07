@@ -16,7 +16,7 @@ function GetTime() {
             document.querySelector('p.time').textContent = `Stängt, öpnnar om ${18 - hour} timmar och ${60 - min} minuter`;
     }
 }
-document.addEventListener('DOMContentLoaded', () => { //gör så ctiden också updateras när sidan laddas
+document.addEventListener('DOMContentLoaded', () => { //gör så tiden också updateras när sidan laddas
     GetTime(); 
 });
 
