@@ -135,7 +135,7 @@ main .flex-box {/*fixar så sakerna staplas från vänster tillhöger istället 
     border-radius: 1rem;
 }
 main figure .flex-box img {
-    min-width: 15rem; /*gör så den har en mnimi bräd*/
+    min-width: 13rem; /*gör så den har en mnimi bräd*/
     max-width: 20rem; /*gör så den har en mac bräd*/
     border: 0.2rem solid var(--espresso);
     border-radius: 1rem;
@@ -227,6 +227,7 @@ footer {/*handterar bara sidfoitfen längst ner gör så de två texterna har li
     padding: 1.5rem;
     display: flex;
     justify-content: space-between;
+    bottom: 0;
 }
 footer p{
     margin: auto;
