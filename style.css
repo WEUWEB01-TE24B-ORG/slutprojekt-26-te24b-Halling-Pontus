@@ -114,6 +114,7 @@ main article button{
     margin-bottom: 1rem;
 }
 main article iframe{ 
+    width: 100%; /*gör så den sträker över hela div boxen*/
     display: none; /*gör så filen inte är där från början*/
 }
 main article h2 {/*ändar på h2 används mest för rubriker*/
@@ -141,10 +142,9 @@ main figure .flex-box img {
     border-radius: 1rem;
     flex: 1;
 }
-
 main figure .flex-box p {
     flex: 1;
-    min-width: 10rem; /*gör så texten har en mini mi bräd vilket putar ner bilden*/
+    min-width: 11rem; /*gör så texten har en mini mi bräd vilket putar ner bilden*/
 }
 
 main .columns { /*används mest för att få figuresana att staplas vågrät*/
@@ -185,11 +185,11 @@ main .columns figure p a { /*ändrar så länken är svat istället för lilla*/
     background-color: var(--vanilla-custard);
     border: 0.2rem solid black;
 }
-form label {}
 form input {/*säger hur stor vita rutan man fyller i sitt namn och eposten i*/
-    width: 8rem;
+    width: 10rem;
 }
 form textarea {/*ändrar så textrutan blir störe och högre där man skriver medelandet*/
+    max-width: fit-content;
     min-width: 100%;
     height: 8rem;
 }
