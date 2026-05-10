@@ -1,4 +1,4 @@
-function GetTime() {
+function GetTime() { //gör så man kan se hur många minuter det är tills linjen öpnnan eller när den stänger eller bara att den är öppen
     now = new Date();
     let hour = now.getHours()
     let min = now.getMinutes()
@@ -19,5 +19,10 @@ function GetTime() {
 document.addEventListener('DOMContentLoaded', () => { //gör så tiden också updateras när sidan laddas
     GetTime(); 
 });
-
+let videoIsOn = false
+function showVideo(){ //gör så man kan srtänga av och sätta på videon
+    videoIsOn = !videoIsOn;
+    if(videoIsOn){document.querySelector("iframe").style.display = "block";  }
+    else if (!videoIsOn){document.querySelector("iframe").style.display = "none";  }
+}
 setInterval(GetTime, 5000)

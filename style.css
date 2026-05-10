@@ -20,10 +20,10 @@ ul {
     margin: 0;
     padding: 0;
 }
-img{
+img {
     width: 100%;
 }
-:root {
+ :root { /*gör variabler för färger*/
     --icy-blue: #b9e6ffff;
     --toffee-brown: #8a6552ff;
     --vanilla-custard: #f6e3a2ff;
@@ -31,176 +31,208 @@ img{
     --emerald: #2fbf71ff;
 }
 html {
-    scroll-padding-top: 4rem;
+    scroll-padding-top: 4rem;  /*gör så id länkarna fungerar mycket bätre / kommer på rätt ställe*/
 }
-body{
-    background-color: var(--toffee-brown);
+body { /*gör så backgrunden är brun*/
+    background-color: var(--toffee-brown); 
 }
-.container{
+.container { /*difinerar hur mobil layouten ska se ut*/
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: 
-    "header"
-    "leftSidePanel"
-    "content" /*rightSidePanel behövs inte på mobil */
-    "footer";
+    grid-template-areas:
+        "header"
+        "leftSidePanel"
+        /*rightSidePanel behövs inte på mobil för den används inte */
+        "content"
+        "footer";
 }
-@media (min-width: 768px){
-    .container{
+@media (min-width: 768px) { /*difinerar hur surplattans layout ska se ut*/
+    .container {
         display: grid;
         grid-template-columns: 1fr 4fr 1fr;
-        grid-template-areas: 
-        "header header header"
-        "leftSidePanel content rightSidePanel"
-        "footer footer footer";
-    }
-    main .columns{
-        overflow: hidden;
+        grid-template-areas:
+            "header header header"
+            "leftSidePanel content rightSidePanel"
+            "footer footer footer";
     }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1024px) {/*definerar hur datorn ska se ut*/
     .container {
         display: grid;
         grid-template-columns: 1fr 3fr 1fr;
         grid-template-areas:
-        "header header header"
-        "leftSidePanel content rightSidePanel"
-        "footer footer footer";
-    }
-    main .columns{
-        overflow: hidden;
+            "header header header" /*den här ska vara högst upp*/
+            "leftSidePanel content rightSidePanel"/*mitten*/
+            "footer footer footer";/*längst ner*/
     }
 }
-header{
+a{ /*gillar inte när länkar har text dekoration så därför gör jag så alla har det*/
+    text-decoration: none;
+}
+/*sidhuvud*/
+header {
     background-color: var(--espresso);
-    grid-area: header;
-    position: sticky;
-    top: 0;
-    margin-bottom: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    grid-area: header; /*säger att den här ska vara högst upp*/
+    position: sticky;/*gör så den altid är på skären*/
+    top: 0; /*gör så den är uppe*/
+    margin-bottom: 2rem; /*går så man får lite mellan rum*/
+    padding-top: 1rem; /*gör så heder får lite mer fyllning*/
+    padding-bottom: 1rem; /*-II-*/
 }
-header nav{
+header nav { /*kontrolerar navigations fältet*/
     margin-left: 2rem;
 }
-header nav a{
-    text-decoration: none; 
-    font-family: "Merriweather", serif;
+header nav a {/*kontolerar länkarna i navigaions fältet*/
+    color: whitesmoke; /*ändrar färg på texten*/
+    font-family: "Merriweather", serif; /*ändrar font*/
     margin-left: 1.67rem;
     margin-top: -1rem;
     font-size: 1.4rem;
-    color: whitesmoke
 }
-header nav a.active{
+header nav a.active {/*ändrar så sidans länk som du är ine på blir blå*/
     color: var(--icy-blue);
 }
-main{
-    grid-area: content;
+/*huvuddel*/
+main { /*ändrar på huvud delen av sidan*/
+    grid-area: content; /*gör så saker i main kommer effter left-side-panel eller heder beroende på enhet*/
     font-family: "Habibi", serif;
 }
-main article{
-    padding: 2rem;
+main h1 { /*ändrar h1*/
+    text-align: center; /*gör så texten är i center istället för till vänster*/
+    margin-bottom: 1rem;
+    font-size: 2.5em;
+}
+main article { /*ändar typ alla stycken asså själva huvud delen*/
     background-color: wheat;
+    padding: 2rem;
+    border-radius: 1rem; /*gör så det blir rundade hörn*/
+    width: 93%; /*gör så den blir lite mindre*/
+    margin: auto; /*gör så den är i mitten*/
     margin-bottom: 2rem;
+}
+main article button{
+    margin-bottom: 1rem;
+}
+main article iframe{ 
+    display: none; /*gör så filen inte är där från början*/
+}
+main article h2 {/*ändar på h2 används mest för rubriker*/
+    font-size: 2.5em; /*gör den lite störe*/
+    font-family: "Caveat", cursive; /*ändrar så h2 har en speciel font*/
+    margin-bottom: 1rem;
+}
+main article ol h3{ /*ändrar subrubriker i index*/
+    margin-left: -2.5rem;
+    margin-bottom: 0.5rem;
+}
+main article ol li a{ /*ändrar färg på länkarna*/
+    color: black;
+}
+main .flex-box {/*fixar så sakerna staplas från vänster tillhöger istället för up till ner*/
+    display: flex;
+    flex-wrap: wrap; /*gör så bilden också kan gå ner under texten när den får för lite plats*/
+    gap: 1.5rem; /*gör ett mellan rum mellan texten och bilden*/
     border-radius: 1rem;
 }
-main article h2{
-    font-size: 3em;
-    font-family: "Caveat", cursive;
-    margin-bottom: 1rem;
-}
-main article p{
-    
-}
-main h1{
-    text-align: center;
-    margin-bottom: 1rem;
+main figure .flex-box img {
+    min-width: 15rem; /*gör så den har en mnimi bräd*/
+    max-width: 20rem; /*gör så den har en mac bräd*/
+    border: 0.2rem solid var(--espresso);
+    border-radius: 1rem;
+    flex: 1;
 }
 
-main .columns{
+main figure .flex-box p {
+    flex: 1;
+    min-width: 10rem; /*gör så texten har en mini mi bräd vilket putar ner bilden*/
+}
+
+main .columns { /*används mest för att få figuresana att staplas vågrät*/
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 1rem;
 }
-.suportPage{
-   background-color: wheat; 
-   padding: 2rem;
-   border-radius: 1rem;
-   margin-bottom: 2rem;
+main figure { /*ändrar så figuren på hem får pading och ändrar färg mm */
+    background-color: wheat;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
 }
-main .columns figure{
-    border: 0.2rem solid black;
+main .columns figure {/*ändrar figurerna på kontakt sidan*/
+    border: 0.2rem solid black; /*gör så det blir en svart bar runt omkring figuren*/
     background-color: var(--vanilla-custard);
     padding: 1rem;
     border-radius: 1rem;
     text-align: center;
-    flex: 1 1 0;
-    min-width: 35%;
+    flex: 1 1 0; /*gör också så den kan hoppa ner*/
+    min-width: 35%; /*gör så de hoppar ner när de få förlite text*/
 }
-main .columns figure img{
-    width: 55%;
+main .columns figure img {/*bilden i figure*/
+    width: 55%; /*gör så bilden inte blir för stor och så de två bilderna har olika storle*/
     margin-bottom: 1rem;
 }
-main .columns figure p{
+main .columns figure p { /*ändrar fot för sifror är fula i hibbibi*/
     font-family: "Merriweather", serif;
 }
-main .columns figure p a{
-    text-decoration: none;
+main .columns figure p a { /*ändrar så länken är svat istället för lilla*/ 
     color: black;
 }
-.post{
+.suport-form {/*gör så kontakt formen blir lik figuresana med telefon och mejl*/
+    width: 93%;
+    margin: auto;
     padding: 1rem;
-    margin-bottom: 3.5rem;
-    border-radius: 0.5rem;
-}
-.suportForm{
-    padding: 1rem;
-    margin-bottom: 3.5rem;
     border-radius: 0.5rem;
     background-color: var(--vanilla-custard);
     border: 0.2rem solid black;
 }
-form label{
-
+form label {}
+form input {/*säger hur stor vita rutan man fyller i sitt namn och eposten i*/
+    width: 8rem;
 }
-form input{
-    width: 15rem;
-}
-form textarea{
-    max-width: 101%;
+form textarea {/*ändrar så textrutan blir störe och högre där man skriver medelandet*/
     min-width: 100%;
     height: 8rem;
 }
-main p{
-    width: 100%;
-    width: auto;    
+main p {/*gör så ord kan breaka samt så texten är i miten*/
+    width: auto;
     word-break: break-word
 }
-
-nav.leftSidePanel{
-    margin-top: 2.5rem;
+/*vänstra aside*/
+nav.left-side-panel {/*min andra aside typ men heter nav för det är en nac också*/
+    margin-top: 1rem;
     grid-area: leftSidePanel;
-    margin-left: 5rem;
+    margin-left: 3rem;
 }
-nav ul{
-    margin-bottom: 1rem;
+nav ul {/*gör bara ett litet mellan rum mellan  listorna*/
+    margin-bottom: 0.5rem;
 }
-nav ul li{
+nav ul li {/*gör så föremålen i listan flytas litte till höger*/
     margin-left: 1rem;
-}   
-nav ul li a:link{
-    color: var(--emerald);
-    text-decoration: none;
 }
-nav ul li a:visited{
-    text-decoration: none;
+nav ul li a:link {/*ändrar färg när man klickar på en jämfört med om man inte har*/
+    color: var(--emerald);
+}
+nav ul li a:visited { /*-II-*/
     color: var(--icy-blue);
 }
-aside{
+/*högra aside*/
+aside {/*gör högra asiede*/
     grid-area: rightSidePanel;
 }
-footer{
+/*sidfoot*/
+footer {/*handterar bara sidfoitfen längst ner gör så de två texterna har lika mellanrum samt ger annan färg och padding*/
+    margin-top: 2rem;
     grid-area: footer;
     background-color: var(--espresso);
-    padding: 5rem;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+footer p{
+    margin: auto;
+    color: whitesmoke; /*ändrar fär så det blir änklare att läsa*/
+    font-family: "Merriweather", serif;
+}
+footer a{
+    color: whitesmoke;
 }
